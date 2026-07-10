@@ -33,7 +33,7 @@ const BookingPage = () => {
       return;
     }
     fetchBusDetails();
-  }, [busId]);
+  }, [busId, fetchBusDetails, isAuthenticated, navigate]);
 
   const fetchBusDetails = async () => {
     try {
