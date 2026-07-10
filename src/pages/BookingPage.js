@@ -3,7 +3,7 @@ import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { busAPI, bookingAPI, paymentAPI } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-toastify';
-import { IndianRupee, User, Calendar, MapPin, Clock, Tag, X } from 'lucide-react';
+import { IndianRupee, Calendar, MapPin, Clock,  } from 'lucide-react';
 import Loading from '../components/Loading';
 
 const BookingPage = () => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { busAPI } from '../services/api';
 import { Bus, Clock, MapPin, IndianRupee, Armchair } from 'lucide-react';
@@ -25,9 +25,9 @@ const SearchResults = () => {
     } else {
       navigate('/');
     }
-  }, [from, to]);
+  }, [from, to, navigate, searchBuses]);
 
-  const searchBuses = async () => {
+  const searchBuses = useCallback(async () => {
     try {
       setLoading(true);
       const response = await busAPI.searchBuses({ from, to });
@@ -38,7 +38,7 @@ const SearchResults = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [from, to]);
 
   const handleFilterChange = (e) => {
     setFilters({

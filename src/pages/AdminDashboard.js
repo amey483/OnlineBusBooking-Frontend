@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { busAPI, bookingAPI } from '../services/api';
 import { toast } from 'react-toastify';
-import { Bus, Plus, Edit, Trash2, BarChart3, Users, IndianRupee, XCircle } from 'lucide-react';
+import { Bus, Plus, Trash2, BarChart3, Users, IndianRupee, XCircle } from 'lucide-react';
 import Loading from '../components/Loading';
 
 const AdminDashboard = () => {
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     fetchData();
-  }, [activeTab]);
+  }, []);
 
   const fetchData = async () => {
     try {
